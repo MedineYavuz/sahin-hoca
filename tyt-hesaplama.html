@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYT PUAN HESAPLAMA</title>
+</head>
+<body>
+    
+
+ <script>
+
+let turkceDogru, turkceYanlis=0;
+let matematikDogru,matematikYanlis=0;
+let sosyalDogru,sosyalYanlis=0;
+let fenDogru,fenYanlis=0;
+
+let puan=0;
+let okulPuani=0;
+
+//2.olarak mesajımızı yazdık.
+
+let mesaj=`TYT PUAN HESAPLAMA UYGULAMASINA HOŞGELDİNİZ.
+1-PUAN HESAPLAMA
+2-ÇIKIŞ`;
+
+let secim=prompt(mesaj); //3.olarak kullanıcıdan değer alınır.
+
+switch(secim){
+    case "1":
+        okulPuani=Number(prompt("Okul puanını giriniz"));
+        turkceDogru=Number(prompt("Türkçe doğru sayısı:"));
+        turkceYanlis=Number(prompt("Türkçe yanlış sayısı:"));
+
+        matematikDogru=Number(prompt("Matematik doğru sayısı:"));
+        matematikYanlis=Number(prompt("Matematik yanlış sayısı:"));
+        
+        sosyalDogru=Number(prompt("Sosyal doğru sayısı:"));
+        sosyalYanlis=Number(prompt("Sosyal yanlış sayısı:"));
+
+        fenDogru=Number(prompt("Fen doğru sayısı:"));
+        fenYanlis=Number(prompt("Fen yanlış sayısı:"));
+
+        let dogruSayisi=turkceDogru+matematikDogru+sosyalDogru+fenDogru;
+        let yanlisSayisi=turkceYanlis+matematikYanlis+sosyalYanlis+fenYanlis;
+
+        let net=dogruSayisi-(yanlisSayisi/4);
+
+        puan=(net*4)+okulPuani+100;
+        
+        alert("TYT PUANINIZ:"+puan);
+        break;
+    
+    case "2":
+        alert("sistemden çıkış yaptınız...");
+        break;
+
+    default:
+        alert("lütfen geçerli değer giriniz! ");
+        break;
+
+}
+
+ </script>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
